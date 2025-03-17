@@ -7,7 +7,9 @@ import {
   Portfolio,
   HowWeWork,
   OurTeamMembers,
+  Reviews,
   FrequentlyAskedQuestions,
+  Footer,
 } from "@/components/home";
 
 export default function Home() {
@@ -21,8 +23,10 @@ export default function Home() {
       <Details />
       <Portfolio />
       <HowWeWork />
+      <Reviews />
       <OurTeamMembers />
       <FrequentlyAskedQuestions />
+      <Footer />
     </main>
   );
 }

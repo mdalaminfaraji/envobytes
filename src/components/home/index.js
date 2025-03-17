@@ -7,7 +7,7 @@ import Portfolio from "./Portfolio";
 import HowWeWork from "./HowWeWork";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 import OurTeamMembers from "./OurTeamMembers";
-
+import Reviews from "./Reviews";
 export { default as Header } from "./Header";
 export { default as HeroSection } from "./HeroSection";
 export { default as Footer } from "./Footer";
@@ -17,3 +17,4 @@ export { default as Portfolio } from "./Portfolio";
 export { default as HowWeWork } from "./HowWeWork";
 export { default as FrequentlyAskedQuestions } from "./FrequentlyAskedQuestions";
 export { default as OurTeamMembers } from "./OurTeamMembers";
+export { default as Reviews } from "./Reviews";
