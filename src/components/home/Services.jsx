@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { serviceCards } from "@/lib/servicesData";
-
+import { TfiLayoutLineSolid } from "react-icons/tfi";
 export default function Services() {
   const [activeTab, setActiveTab] = useState("WEBSITE");
   const sliderRef = useRef(null);
@@ -38,16 +38,26 @@ export default function Services() {
     }
   };
 
-  // Handle dot navigation
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
   return (
     <section className="pt-40 pb-20 relative">
-      <div className="mx-auto px-4 md:px-6 ">
+      <div className="mx-auto px-4 md:px-6">
+        {/* Background gradient element */}
+        <div
+          className="absolute inset-0 z-0 opacity-30"
+          style={{
+            background:
+              "radial-gradient(circle at center, rgba(12, 137, 255, 0.8) 0%, rgba(4, 19, 91, 0.8) 70%)",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "80%",
+            height: "100%",
+            pointerEvents: "none",
+          }}
+        ></div>
+
         {/* Section Header with Title and All Services Button */}
-        <div className="flex justify-between items-center mb-8 border-b-[1px] border-[#FFFFFF42] pb-4">
+        <div className="flex justify-between items-center mb-8 border-b-[1px] border-[#FFFFFF42] pb-4 relative z-10">
           <div>
             <h2 className="text-sm text-[#FF693B] uppercase font-semibold mb-2">
               DIGITAL SERVICES
@@ -56,13 +66,27 @@ export default function Services() {
               Check Our Available Services
             </h3>
           </div>
-          <button className="px-6 py-2 bg-[#FF693B] text-white rounded-md hover:bg-orange-600 transition-colors">
-            All Services
+          <button
+            className="px-6 py-2 text-white rounded-md transition-colors relative overflow-hidden"
+            style={{
+              background: "linear-gradient(45deg, #FF693B, #FF4D4D)",
+            }}
+          >
+            <span className="relative z-10">All Services</span>
+            <span
+              className="absolute inset-0 bg-white opacity-10 blur-sm"
+              //   style={{
+              //     background:
+              //       "radial-gradient(circle at center, rgba(12, 137, 255, 0.8) 0%, rgba(4, 19, 91, 0.8) 70%)",
+              //     filter: "blur(10px)",
+              //     zIndex: "10",
+              //   }}
+            ></span>
           </button>
         </div>
 
         {/* Service Category Tabs */}
-        <div className="flex flex-wrap gap-3 mb-12">
+        <div className="flex flex-wrap gap-3 mb-12 relative z-10">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -82,7 +106,7 @@ export default function Services() {
         </div>
 
         {/* Service Cards Slider */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden z-10">
           <div
             ref={sliderRef}
             className="flex transition-transform duration-500 ease-in-out"
@@ -161,9 +185,10 @@ export default function Services() {
         </div>
 
         {/* Creative Solution Text */}
-        <div className="flex justify-end mt-12">
-          <p className="text-white uppercase tracking-widest">
-            CREATIVE SOLUTION
+        <div className="flex justify-end  z-10">
+          <p className="text-white uppercase tracking-widest flex items-center gap-2">
+            CREATIVE SOLUTION{" "}
+            <TfiLayoutLineSolid className="text-[#FFFFFF]" size={60} />
           </p>
         </div>
       </div>
