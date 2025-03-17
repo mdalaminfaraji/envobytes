@@ -31,7 +31,7 @@ export default function Details() {
   ];
 
   return (
-    <section className="bg-white py-20 relative overflow-hidden">
+    <section className="bg-white py-20 relative">
       {/* Background wave pattern */}
 
       <div className=" mx-auto px-4 relative z-10 container max-w-[1107px] h-[882px] -mb-80">

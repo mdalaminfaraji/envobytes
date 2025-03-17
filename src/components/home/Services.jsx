@@ -40,7 +40,7 @@ export default function Services() {
 
   return (
     <section className="pt-40 pb-20 relative">
-      <div className="mx-auto px-4 md:px-6">
+      <div className="mx-auto ">
         {/* Background gradient element */}
         <div
           className="absolute inset-0 z-20 opacity-30"
@@ -57,7 +57,7 @@ export default function Services() {
         ></div>
 
         {/* Section Header with Title and All Services Button */}
-        <div className="flex justify-between items-center mb-8 border-b-[1px] border-[#FFFFFF42] pb-4 relative z-10">
+        <div className="flex justify-between items-center mb-8 border-b-[1px] border-[#FFFFFF42] pb-4 relative z-10 mx-14">
           <div>
             <h2 className="text-sm text-[#FF693B] uppercase font-semibold mb-2">
               DIGITAL SERVICES
@@ -86,7 +86,7 @@ export default function Services() {
         </div>
 
         {/* Service Category Tabs */}
-        <div className="flex flex-wrap gap-3 mb-12 relative z-10">
+        <div className="flex flex-wrap gap-3 mb-12 relative z-10 px-12">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -106,7 +106,7 @@ export default function Services() {
         </div>
 
         {/* Service Cards Slider */}
-        <div className="relative overflow-hidden z-10">
+        <div className="relative overflow-hidden z-10 pl-12">
           <div
             ref={sliderRef}
             className="flex transition-transform duration-500 ease-in-out"

@@ -7,7 +7,7 @@ const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="  py-4">
+    <header className="  py-4 px-14">
       <div className="max-w-[1902px] mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Image

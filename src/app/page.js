@@ -1,5 +1,11 @@
 "use client";
-import { Header, HeroSection, Services, Details } from "@/components/home";
+import {
+  Header,
+  HeroSection,
+  Services,
+  Details,
+  Portfolio,
+} from "@/components/home";
 
 export default function Home() {
   return (
@@ -10,6 +16,7 @@ export default function Home() {
         <Services />
       </div>
       <Details />
+      <Portfolio />
     </main>
   );
 }
