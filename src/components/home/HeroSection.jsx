@@ -96,7 +96,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center absolute top-5/6 -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div className="flex justify-center absolute top-5/6 -translate-y-1/2 left-1/2 -translate-x-1/2 z-50">
           <div className="relative w-full max-w-5xl rounded-lg overflow-hidden">
             <Image
               src="/Envobyte/image.png"

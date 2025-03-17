@@ -43,14 +43,14 @@ export default function Services() {
       <div className="mx-auto px-4 md:px-6">
         {/* Background gradient element */}
         <div
-          className="absolute inset-0 z-0 opacity-30"
+          className="absolute inset-0 z-20 opacity-30"
           style={{
             background:
               "radial-gradient(circle at center, rgba(12, 137, 255, 0.8) 0%, rgba(4, 19, 91, 0.8) 70%)",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: "80%",
+            width: "60%",
             height: "100%",
             pointerEvents: "none",
           }}
@@ -66,22 +66,22 @@ export default function Services() {
               Check Our Available Services
             </h3>
           </div>
+          <span
+            className="absolute w-72 h-72  -right-5"
+            style={{
+              background:
+                "radial-gradient(circle at center, rgba(12, 137, 255, 0.2) 0%, rgba(4, 19, 91, 0.1) 70%)",
+
+              pointerEvents: "none",
+            }}
+          ></span>
           <button
-            className="px-6 py-2 text-white rounded-md transition-colors relative overflow-hidden"
+            className="px-6 py-2 text-white rounded-md transition-colors relative overflow-hidden z-30"
             style={{
               background: "linear-gradient(45deg, #FF693B, #FF4D4D)",
             }}
           >
             <span className="relative z-10">All Services</span>
-            <span
-              className="absolute inset-0 bg-white opacity-10 blur-sm"
-              //   style={{
-              //     background:
-              //       "radial-gradient(circle at center, rgba(12, 137, 255, 0.8) 0%, rgba(4, 19, 91, 0.8) 70%)",
-              //     filter: "blur(10px)",
-              //     zIndex: "10",
-              //   }}
-            ></span>
           </button>
         </div>
 
@@ -124,10 +124,10 @@ export default function Services() {
                   <h3 className="text-xl font-bold mb-2">{card.title}</h3>
                   <p className="text-gray-300 mb-6">{card.description}</p>
                   <div className="flex justify-center gap-2">
-                    <button className="px-4 py-2 bg-[#0C89FF] text-white rounded-md hover:bg-blue-700 transition-colors">
+                    <button className="px-9 py-2 bg-[#0C89FF] text-white rounded-[30px] hover:bg-blue-700 transition-colors">
                       Portfolio
                     </button>
-                    <button className="px-4 py-2 border border-gray-400 text-white rounded-md hover:bg-white/10 transition-colors">
+                    <button className="px-6 py-2 border border-gray-400 text-white rounded-[30px] hover:bg-white/10 transition-colors">
                       Order
                     </button>
                   </div>
