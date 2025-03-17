@@ -6,6 +6,7 @@ import {
   Details,
   Portfolio,
   HowWeWork,
+  FrequentlyAskedQuestions,
 } from "@/components/home";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Details />
       <Portfolio />
       <HowWeWork />
+      <FrequentlyAskedQuestions />
     </main>
   );
 }
