@@ -450,7 +450,7 @@ export default function Services() {
   };
 
   return (
-    <section className="py-20 relative">
+    <section className="pt-40 pb-20 relative">
       <div className="mx-auto px-4 md:px-6 ">
         {/* Section Header with Title and All Services Button */}
         <div className="flex justify-between items-center mb-8 border-b-[1px] border-[#FFFFFF42] pb-4">
@@ -468,14 +468,14 @@ export default function Services() {
         </div>
 
         {/* Service Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap  gap-3 mb-12">
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`px-4 py-2 rounded-md transition-colors ${
+              className={`px-4 py-2 rounded-md transition-colors cursor-pointer ${
                 activeTab === tab.id
-                  ? "bg-[#0C89FF] text-white"
-                  : "bg-[#03205A] text-white hover:bg-[#0C89FF]"
+                  ? " text-[#0C89FF]"
+                  : "text-white hover:text-[#0C89FF]"
               }`}
               onClick={() => setActiveTab(tab.id)}
             >
