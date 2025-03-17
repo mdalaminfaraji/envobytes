@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { TfiLayoutLineSolid } from "react-icons/tfi";
 
 export default function Portfolio() {
   // Categories for the portfolio filters
@@ -70,10 +71,87 @@ export default function Portfolio() {
       image: "/Envobyte/Frame 1000006145.png",
       logos: ["/Envobyte/wordpress.png"],
     },
+    {
+      id: 9,
+      title: "DIGITAL DESIGN AGENCY",
+      categories: ["banner-design", "logo-design"],
+      image: "/Envobyte/Rectangle 6052-1.png",
+      logos: ["/Envobyte/seo.png"],
+    },
+    {
+      id: 10,
+      title: "LanghamTrading Profitabel Stock Picks",
+      categories: ["ui-ux", "google-ads"],
+      image: "/Envobyte/portfolio.png",
+      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
+    },
+    {
+      id: 11,
+      title: "Improve your Skill With This Way",
+      categories: ["seo", "google-ads"],
+      image: "/Envobyte/Frame 1000006145.png",
+      logos: ["/Envobyte/wordpress.png"],
+    },
+    {
+      id: 12,
+      title: "DIGITAL DESIGN AGENCY",
+      categories: ["banner-design", "logo-design"],
+      image: "/Envobyte/Rectangle 6052-1.png",
+      logos: ["/Envobyte/seo.png"],
+    },
+    {
+      id: 13,
+      title: "LanghamTrading Profitabel Stock Picks",
+      categories: ["ui-ux", "google-ads"],
+      image: "/Envobyte/portfolio.png",
+      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
+    },
+    {
+      id: 14,
+      title: "Improve your Skill With This Way",
+      categories: ["seo", "google-ads"],
+      image: "/Envobyte/Frame 1000006145.png",
+      logos: ["/Envobyte/wordpress.png"],
+    },
+    {
+      id: 15,
+      title: "DIGITAL DESIGN AGENCY",
+      categories: ["banner-design", "logo-design"],
+      image: "/Envobyte/Rectangle 6052-1.png",
+      logos: ["/Envobyte/seo.png"],
+    },
+    {
+      id: 16,
+      title: "LanghamTrading Profitabel Stock Picks",
+      categories: ["ui-ux", "google-ads"],
+      image: "/Envobyte/portfolio.png",
+      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
+    },
+    {
+      id: 17,
+      title: "Improve your Skill With This Way",
+      categories: ["seo", "google-ads"],
+      image: "/Envobyte/Frame 1000006145.png",
+      logos: ["/Envobyte/wordpress.png"],
+    },
+    {
+      id: 18,
+      title: "DIGITAL DESIGN AGENCY",
+      categories: ["banner-design", "logo-design"],
+      image: "/Envobyte/Rectangle 6052-1.png",
+      logos: ["/Envobyte/seo.png"],
+    },
   ];
 
   // State for active category
   const [activeCategory, setActiveCategory] = useState("ui-ux");
+
+  // Reference for slider
+  const sliderRef1 = useRef(null);
+  const sliderRef2 = useRef(null);
+
+  // State for slider position
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   // Filtered portfolio items
   const filteredItems =
@@ -83,8 +161,25 @@ export default function Portfolio() {
           item.categories.includes(activeCategory)
         );
 
+  // Calculate how many slides we need
+  const maxSlide = Math.max(0, Math.ceil(filteredItems.length / 5) - 1);
+
+  // Handle slider navigation
+  const handleSlide = (direction) => {
+    if (direction === "next" && currentSlide < maxSlide) {
+      setCurrentSlide((prev) => prev + 1);
+    } else if (direction === "prev" && currentSlide > 0) {
+      setCurrentSlide((prev) => prev - 1);
+    }
+  };
+
+  // Reset slide position when category changes
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [activeCategory]);
+
   return (
-    <section className="max-w-[1930px] mx-auto  relative  -mt-[500px]">
+    <section className="max-w-[1930px] mx-auto relative -mt-[500px]">
       {/* Portfolio Header */}
       <div className="flex justify-between items-center mb-8 mx-14 pb-7 border-b border-gray-200">
         <div>
@@ -101,13 +196,13 @@ export default function Portfolio() {
       </div>
 
       {/* Portfolio Filter Categories */}
-      <div className="flex flex-wrap  pb-14 gap-8  px-14">
+      <div className="flex flex-wrap pb-10 gap-8 px-14">
         {categories.map((category) => (
           <button
             key={category.id}
-            className={`text-sm font-medium uppercase tracking-wide pb-2 px-2 ${
+            className={`text-[16px] font-medium uppercase tracking-wide pb-2 px-2 ${
               activeCategory === category.id
-                ? "text-blue-500 border-b-2 border-blue-500"
+                ? "text-[#0C89FF]"
                 : "text-gray-600 hover:text-blue-500"
             }`}
             onClick={() => setActiveCategory(category.id)}
@@ -117,76 +212,112 @@ export default function Portfolio() {
         ))}
       </div>
 
-      {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 pb-8 bg-white bg-opacity-10">
-        {filteredItems.map((item) => (
+      {/* Portfolio Slider - First Row */}
+      <div className=" mb-6 relative bg-white">
+        <div className="overflow-hidden">
           <div
-            key={item.id}
-            className="group relative overflow-hidden rounded-md border border-gray-200 h-[250px] hover:shadow-lg transition-all duration-300"
+            ref={sliderRef1}
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${currentSlide * (100 / 4.25)}%)`,
+            }}
           >
-            <Image
-              src={item.image}
-              alt={item.title}
-              width={400}
-              height={250}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-
-            {/* Overlay on hover */}
-            {/* <div className="absolute inset-0 bg-gradient-to-t from-[#001246]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 bg-white bg-opacity-10">
-              <div className="flex items-center gap-2 mb-2">
-                {item.logos.map((logo, index) => (
-                  <Image
-                    key={index}
-                    src={logo}
-                    width={24}
-                    height={24}
-                    alt="Technology"
-                    className="rounded-full bg-white p-1"
-                  />
-                ))}
+            {filteredItems.map((item) => (
+              <div
+                key={item.id}
+                className="group relative min-w-[23%] mx-1.5 h-[250px] overflow-hidden rounded-md border border-gray-200 hover:shadow-lg transition-all duration-300"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={400}
+                  height={250}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-              <h3 className="text-white font-medium text-sm">{item.title}</h3>
-            </div> */}
+            ))}
           </div>
-        ))}
+        </div>
       </div>
 
-      {/* Pagination */}
-      <div className="flex justify-between items-center bg-white bg-opacity-10 pb-32">
-        <div className="flex gap-1">
-          <button className="w-8 h-8 rounded border border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-500 hover:text-blue-500">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fillRule="evenodd"
-                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-              />
-            </svg>
-          </button>
-          <button className="w-8 h-8 rounded bg-[#FF693B] text-white flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fillRule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-              />
-            </svg>
-          </button>
+      {/* Portfolio Slider - Second Row */}
+      <div className=" pb-10 relative bg-white">
+        <div className="overflow-hidden">
+          <div
+            ref={sliderRef2}
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${currentSlide * (100 / 4.25)}%)`,
+            }}
+          >
+            {filteredItems.map((item) => (
+              <div
+                key={`second-${item.id}`}
+                className="group relative min-w-[23%] mx-1.5 h-[250px] overflow-hidden rounded-md border border-gray-200 hover:shadow-lg transition-all duration-300"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={400}
+                  height={250}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="text-gray-500 uppercase text-sm tracking-widest font-light">
-          CREATIVE PORTFOLIO
-        </div>
+      </div>
+      {/* Navigation Buttons */}
+      <div className="flex justify-center items-center gap-2 bg-white pb-28">
+        <button
+          className={` w-9 h-9 rounded-md border border-[#0A2C8C] bg-white shadow-md flex items-center justify-center ${
+            currentSlide === 0
+              ? "text-[#0A2C8C] cursor-not-allowed"
+              : "text-[#0A2C8C] hover:bg-gray-100"
+          }`}
+          onClick={() => handleSlide("prev")}
+          disabled={currentSlide === 0}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            />
+          </svg>
+        </button>
+
+        <button
+          className={`w-9 h-9 rounded-md border border-gray-300 bg-[#FF693B] shadow-md flex items-center justify-center ${
+            currentSlide >= maxSlide
+              ? "text-white cursor-not-allowed"
+              : "text-white hover:bg-[#ff3b3b]"
+          }`}
+          onClick={() => handleSlide("next")}
+          disabled={currentSlide >= maxSlide}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div className="absolute bottom-18 right-0 text-[#353535] uppercase text-sm tracking-widest font-light flex items-center gap-2 pb-8 ">
+        CREATIVE PORTFOLIO <TfiLayoutLineSolid size={40} />
       </div>
     </section>
   );
