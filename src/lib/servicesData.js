@@ -103,7 +103,7 @@ export const serviceCards = {
         <div className="bg-blue-600 p-6 rounded-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-24 h-24 text-white"
+            className="w-12 h-12 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

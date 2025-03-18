@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
+import portfolioData from "@/lib/portfoliosData";
 
 export default function Portfolio() {
   // Categories for the portfolio filters
@@ -11,136 +12,6 @@ export default function Portfolio() {
     { id: "logo-design", name: "LOGO DESIGN" },
     { id: "banner-design", name: "BANNER DESIGN" },
     { id: "google-ads", name: "GOOGLE ADS" },
-  ];
-
-  // Demo portfolio data
-  const portfolioData = [
-    {
-      id: 1,
-      title: "LanghamTrading Profitabel Stock Picks",
-      categories: ["ui-ux", "website"],
-      image: "/Envobyte/portfolio.png",
-      logos: ["/Envobyte/wordpress.png"],
-    },
-    {
-      id: 2,
-      title: "Improve your Skill With This Way",
-      categories: ["ui-ux", "website"],
-      image: "/Envobyte/Frame 1000006145.png",
-      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
-    },
-    {
-      id: 3,
-      title: "Grow Your Skills, Define Your Future",
-      categories: ["website", "banner-design"],
-      image: "/Envobyte/Frame 1000006156.png",
-      logos: ["/Envobyte/wordpress.png"],
-    },
-    {
-      id: 4,
-      title: "Email Marketing Software to Engage Your Audience",
-      categories: ["ui-ux", "seo"],
-      image: "/Envobyte/Group 1000006039.png",
-      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
-    },
-    {
-      id: 5,
-      title: "Ask Anything You Desire, Our Chat Holds the Solutions",
-      categories: ["ui-ux", "website"],
-      image: "/Envobyte/Group 1000006040.png",
-      logos: ["/Envobyte/wordpress.png"],
-    },
-    {
-      id: 6,
-      title: "DIGITAL DESIGN AGENCY",
-      categories: ["banner-design", "logo-design"],
-      image: "/Envobyte/Rectangle 6052-1.png",
-      logos: ["/Envobyte/seo.png"],
-    },
-    {
-      id: 7,
-      title: "LanghamTrading Profitabel Stock Picks",
-      categories: ["ui-ux", "google-ads"],
-      image: "/Envobyte/portfolio.png",
-      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
-    },
-    {
-      id: 8,
-      title: "Improve your Skill With This Way",
-      categories: ["seo", "google-ads"],
-      image: "/Envobyte/Frame 1000006145.png",
-      logos: ["/Envobyte/wordpress.png"],
-    },
-    {
-      id: 9,
-      title: "DIGITAL DESIGN AGENCY",
-      categories: ["banner-design", "logo-design"],
-      image: "/Envobyte/Rectangle 6052-1.png",
-      logos: ["/Envobyte/seo.png"],
-    },
-    {
-      id: 10,
-      title: "LanghamTrading Profitabel Stock Picks",
-      categories: ["ui-ux", "google-ads"],
-      image: "/Envobyte/portfolio.png",
-      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
-    },
-    {
-      id: 11,
-      title: "Improve your Skill With This Way",
-      categories: ["seo", "google-ads"],
-      image: "/Envobyte/Frame 1000006145.png",
-      logos: ["/Envobyte/wordpress.png"],
-    },
-    {
-      id: 12,
-      title: "DIGITAL DESIGN AGENCY",
-      categories: ["banner-design", "logo-design"],
-      image: "/Envobyte/Rectangle 6052-1.png",
-      logos: ["/Envobyte/seo.png"],
-    },
-    {
-      id: 13,
-      title: "LanghamTrading Profitabel Stock Picks",
-      categories: ["ui-ux", "google-ads"],
-      image: "/Envobyte/portfolio.png",
-      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
-    },
-    {
-      id: 14,
-      title: "Improve your Skill With This Way",
-      categories: ["seo", "google-ads"],
-      image: "/Envobyte/Frame 1000006145.png",
-      logos: ["/Envobyte/wordpress.png"],
-    },
-    {
-      id: 15,
-      title: "DIGITAL DESIGN AGENCY",
-      categories: ["banner-design", "logo-design"],
-      image: "/Envobyte/Rectangle 6052-1.png",
-      logos: ["/Envobyte/seo.png"],
-    },
-    {
-      id: 16,
-      title: "LanghamTrading Profitabel Stock Picks",
-      categories: ["ui-ux", "google-ads"],
-      image: "/Envobyte/portfolio.png",
-      logos: ["/Envobyte/wordpress.png", "/Envobyte/seo.png"],
-    },
-    {
-      id: 17,
-      title: "Improve your Skill With This Way",
-      categories: ["seo", "google-ads"],
-      image: "/Envobyte/Frame 1000006145.png",
-      logos: ["/Envobyte/wordpress.png"],
-    },
-    {
-      id: 18,
-      title: "DIGITAL DESIGN AGENCY",
-      categories: ["banner-design", "logo-design"],
-      image: "/Envobyte/Rectangle 6052-1.png",
-      logos: ["/Envobyte/seo.png"],
-    },
   ];
 
   // State for active category
