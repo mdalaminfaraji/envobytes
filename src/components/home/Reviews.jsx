@@ -1,101 +1,8 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import { reviews } from "@/lib/reviewsData";
 
 export default function Reviews() {
-  // Demo reviews data
-  const reviews = [
-    {
-      id: 1,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Stephanie Powell",
-        company: "from Fiverr",
-        image: "https://randomuser.me/api/portraits/women/65.jpg",
-      },
-    },
-    {
-      id: 2,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Brian Clark",
-        company: "from Upwork",
-        image: "https://randomuser.me/api/portraits/men/32.jpg",
-      },
-    },
-    {
-      id: 3,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Christopher White",
-        company: "from Freelancer",
-        image: "https://randomuser.me/api/portraits/men/44.jpg",
-      },
-    },
-    {
-      id: 4,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Brian Clark",
-        company: "from Fiverr",
-        image: "https://randomuser.me/api/portraits/men/32.jpg",
-      },
-    },
-    {
-      id: 5,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Christopher White",
-        company: "from Upwork",
-        image: "https://randomuser.me/api/portraits/men/44.jpg",
-      },
-    },
-    {
-      id: 6,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Stephanie Powell",
-        company: "from Fiverr",
-        image: "https://randomuser.me/api/portraits/women/65.jpg",
-      },
-    },
-    {
-      id: 7,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Emma Johnson",
-        company: "from Upwork",
-        image: "https://randomuser.me/api/portraits/women/33.jpg",
-      },
-    },
-    {
-      id: 8,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Michael Brown",
-        company: "from Freelancer",
-        image: "https://randomuser.me/api/portraits/men/22.jpg",
-      },
-    },
-    {
-      id: 9,
-      rating: 5,
-      text: "Lorem ipsum dolor sit amet dolor sit consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat orare.",
-      author: {
-        name: "Olivia Martinez",
-        company: "from Fiverr",
-        image: "https://randomuser.me/api/portraits/women/17.jpg",
-      },
-    },
-  ];
-
   // State for slider
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
@@ -149,13 +56,38 @@ export default function Reviews() {
         </div>
 
         {/* Reviews Grid */}
-        <div className="max-w-[984] mx-auto">
+        <div className="max-w-[984px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {getCurrentPageReviews().map((review) => (
               <div
                 key={review.id}
-                className="bg-white p-6 rounded-lg w-[314px] h-[239px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white p-6 rounded-lg w-[314px] h-[239px] shadow-sm hover:shadow-md transition-shadow relative"
+                style={{
+                  background: "white",
+                  position: "relative",
+                  zIndex: "1",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                }}
               >
+                {/* Gradient Border */}
+                <div
+                  className="absolute inset-0 -z-10"
+                  style={{
+                    content: '""',
+                    position: "absolute",
+                    inset: "-1px",
+                    borderRadius: "8px",
+                    padding: "1px",
+                    background:
+                      "linear-gradient(to top, #0A2C8C33 70%, #FFFFFF)",
+                    WebkitMask:
+                      "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude",
+                  }}
+                ></div>
+
                 {/* Star Rating */}
                 <div className="flex mb-4">{renderStars(review.rating)}</div>
 
@@ -177,9 +109,18 @@ export default function Reviews() {
                     <h4 className="font-medium text-[#001246]">
                       {review.author.name}
                     </h4>
-                    <p className="text-xs text-gray-500">
-                      {review.author.company}
-                    </p>
+                    <div className="flex items-center">
+                      <Image
+                        src={review.author.logo}
+                        alt={review.author.company}
+                        width={16}
+                        height={16}
+                        className="w-4 h-4 mr-1 rounded-full"
+                      />
+                      <p className="text-xs text-gray-500">
+                        {review.author.company}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
