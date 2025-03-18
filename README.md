@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Envobyte - Digital Services Company Website
+
+![Envobyte Logo](/public/Envobyte/logo-white.png)
+
+A modern, responsive website for Envobyte, an IT company that helps businesses bring their ideas to life easily and affordably.
+
+## Project Overview
+
+Envobyte is a full-featured company website built with Next.js and Tailwind CSS. It showcases the company's services, portfolio, team members, and provides contact functionality. The website features a clean, professional design with smooth transitions, interactive components, and responsive layouts that work across all device sizes.
+
+## Features
+
+- **Responsive Layout**: Fully responsive design that adapts to desktop, tablet, and mobile devices
+- **Modern UI**: Contemporary design with gradients, animations, and clean typography
+- **Component-Based Architecture**: Modular components for maintainability and reusability
+- **Interactive Elements**: 
+  - Tabbed interfaces for service categories
+  - Project portfolio with category filters
+  - Expandable FAQ accordions
+  - Team member and testimonial sliders
+  - Contact form with validation
+- **Performance Optimized**: Lazy loading images and optimized asset loading
+- **SEO Friendly**: Semantic HTML and structured metadata
+
+## Technologies Used
+
+- **Next.js**: React framework for server-side rendering and static site generation
+- **React**: JavaScript library for building user interfaces
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **React Icons**: Icon library for social media and UI elements
+- **CSS Animations**: Custom animations for interactive elements
+- **JavaScript**: ES6+ features for enhanced functionality
+
+## Project Structure
+
+```
+envobyte/
+├── public/
+│   └── Envobyte/           # Project assets (images, icons)
+├── src/
+│   ├── app/                # Next.js app router pages
+│   ├── components/         # React components
+│   │   ├── home/           # Homepage-specific components
+│   │   │   ├── Details.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── FrequentlyAskedQuestions.jsx
+│   │   │   ├── HeroSection.jsx
+│   │   │   ├── HowWeWork.jsx
+│   │   │   ├── index.js    # Component exports
+│   │   │   ├── OurTeamMembers.jsx
+│   │   │   ├── Portfolio.jsx
+│   │   │   ├── Reviews.jsx
+│   │   │   └── Services.jsx
+│   │   └── shared/         # Shared components (Header, etc.)
+│   └── lib/                # Data and utility functions
+│       ├── portfoliosData.js
+│       ├── reviewsData.js
+│       └── servicesData.js
+├── .gitignore
+├── jsconfig.json
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js
+```
+
+## Component Details
+
+- **HeroSection**: Main landing section with call-to-action buttons and key statistics
+- **Services**: Tabbed interface showcasing different service categories with detailed cards
+- **Details**: Three-column layout highlighting key benefits and features
+- **Portfolio**: Filterable grid of project showcases with pagination
+- **HowWeWork**: Step-by-step process visualization with circular design elements
+- **FrequentlyAskedQuestions**: Expandable accordion for common questions
+- **OurTeamMembers**: Team showcase with slider functionality
+- **Reviews**: Client testimonials with rating stars and profile information
+- **Footer**: Contact form, company information, and navigation links
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the website.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Content**: Update the content in the component files and data files in the `src/lib` directory
+- **Styling**: Modify the Tailwind CSS classes or add custom CSS in the component files
+- **Images**: Replace images in the `public/Envobyte` directory with your own assets
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The easiest way to deploy this Next.js app is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+# or
+yarn build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This will create an optimized production build of your website.
 
-## Deploy on Vercel
+## Best Practices Implemented
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Code Organization**: Modular components with clear separation of concerns
+- **Accessibility**: Semantic HTML and ARIA attributes for better screen reader support
+- **Performance**: Optimized images and efficient rendering with React
+- **Maintainability**: Consistent code style and component structure
+- **Responsive Design**: Mobile-first approach with fluid layouts
+- **Clean Code**: Well-commented code with descriptive variable names
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
