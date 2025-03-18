@@ -10,10 +10,9 @@ Envobyte is a full-featured company website built with Next.js and Tailwind CSS.
 
 ## Features
 
-- **Responsive Layout**: Fully responsive design that adapts to desktop, tablet, and mobile devices
 - **Modern UI**: Contemporary design with gradients, animations, and clean typography
 - **Component-Based Architecture**: Modular components for maintainability and reusability
-- **Interactive Elements**: 
+- **Interactive Elements**:
   - Tabbed interfaces for service categories
   - Project portfolio with category filters
   - Expandable FAQ accordions
@@ -123,7 +122,3 @@ This will create an optimized production build of your website.
 - **Maintainability**: Consistent code style and component structure
 - **Responsive Design**: Mobile-first approach with fluid layouts
 - **Clean Code**: Well-commented code with descriptive variable names
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)

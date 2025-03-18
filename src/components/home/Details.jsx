@@ -84,7 +84,7 @@ export default function Details() {
 
         {/* See Pricing Button */}
         <div className="flex justify-center mt-12">
-          <button className="px-8 py-3 bg-[#FF693B] text-white rounded-md hover:bg-orange-600 transition-all duration-300 font-medium">
+          <button className="px-12 py-3 bg-[#FF693B] text-white rounded-md hover:bg-orange-600 transition-all duration-300 font-medium">
             See Pricing
           </button>
         </div>

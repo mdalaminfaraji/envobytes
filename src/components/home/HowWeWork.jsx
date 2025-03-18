@@ -12,7 +12,7 @@ export default function HowWeWork() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-[#04135b81] bg-opacity-50 w-full h-full pt-28">
+      <div className="bg-[#04135ba4]  w-full h-full pt-28">
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">

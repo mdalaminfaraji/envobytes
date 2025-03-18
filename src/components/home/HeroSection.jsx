@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="pt-4 pb-20 text-white relative">
+    <section className="pt-4 pb-20 text-white relative mt-3">
       <div
         className="max-w-[1902px] mx-auto px-4 md:px-6 h-[828px] relative"
         style={{
@@ -28,7 +28,7 @@ const HeroSection = () => {
             BUILDING YOUR EMPIRE DIGITALLY
           </p>
           <div className="flex flex-wrap gap-4 justify-center mb-16">
-            <button className="px-8 py-3 rounded-md bg-[#FF693B] text-white hover:bg-orange-600 transition-colors font-medium uppercase">
+            <button className="px-16 py-3 rounded-md bg-[#FF693B] text-white hover:bg-orange-600 transition-colors font-medium uppercase">
               See Pricing
             </button>
             <button className="px-8 py-3 rounded-md border border-white text-white hover:bg-white/10 transition-colors font-medium uppercase">

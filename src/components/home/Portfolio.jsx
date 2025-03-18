@@ -61,7 +61,7 @@ export default function Portfolio() {
             Check Our Previous Work
           </h2>
         </div>
-        <button className="bg-[#FF693B] hover:bg-orange-600 transition-colors text-white px-6 py-2 rounded">
+        <button className="bg-[#FF693B] hover:bg-orange-600 transition-colors text-white px-12 py-3 rounded">
           All Portfolio
         </button>
       </div>

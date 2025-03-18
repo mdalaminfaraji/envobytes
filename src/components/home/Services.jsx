@@ -76,7 +76,7 @@ export default function Services() {
             }}
           ></span>
           <button
-            className="px-6 py-2 text-white rounded-md transition-colors relative overflow-hidden z-30"
+            className="px-10 py-2 text-base text-white rounded-md transition-colors relative overflow-hidden z-30"
             style={{
               background: "linear-gradient(45deg, #FF693B, #FF4D4D)",
             }}
