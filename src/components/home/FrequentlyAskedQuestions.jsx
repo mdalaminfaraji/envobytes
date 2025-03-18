@@ -61,7 +61,7 @@ export default function FrequentlyAskedQuestions() {
         {/* FAQ Items */}
         <div className="max-w-4xl mx-auto">
           {faqs.map((faq) => (
-            <div key={faq.id} className="border-b border-gray-200 py-5">
+            <div key={faq.id} className="border-b border-gray-200 pt-10 pb-5">
               <div
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq(faq.id)}
